@@ -9,7 +9,6 @@ module.exports = {
         port: 4200,
         host: "127.0.0.1"
     },
-
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
 
