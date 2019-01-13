@@ -1,11 +1,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Hello } from "./components/Hello";
-import App from "./components/App";
+import AppRouter from "./components/appRouter";
 
 ReactDOM.render(
-    /*<Hello compiler="TypeScript" framework="React" />,*/
-    <App/>,
+    <AppRouter/>,
     document.getElementById("example")
 );
