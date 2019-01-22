@@ -3,41 +3,23 @@ import { Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import { render } from "react-dom";
 
-// API
-export const HomeAPI = {
-
-}
-
-// Input
-export interface HomeProps { compiler: string; framework: string; }
-
-// DOM
-export const Home = (props: HomeProps) =>
-<div>
-    <h1>Home from {props.compiler} and {props.framework}!</h1>
-    <Button bsStyle="primary" onClick={(event: React.MouseEvent<Button, MouseEvent>) => {<Redirect to='/topics' />}}>default</Button>
-</div>;
-
-// DOM events
-const HomeEvent = {
+export default class Home extends React.Component<any, any> {
     
-    /**
-     * OnClick
-     * @param event 
-     */
-    onClick(event: React.MouseEvent<Button, MouseEvent>): any {
-        log("onClick"); 
-        log(event);
-        return <Redirect to='/topics' />;
+    constructor(props: any){
+        super(props);
+        this.state = { name: this.props.defaultName };
     }
-}
 
-// Internal functions
+    public render() {
+        return (
+            <div>
+                <h1>Home from {this.props.compiler} and {this.props.framework}!</h1>
+                <Button bsStyle="primary" onClick={(event: React.MouseEvent<Button, MouseEvent>) => {<Redirect to='/topics' />}}>default</Button>
+            </div>
+        );
+    }
 
-/**
- * Console.log; Testing purpose
- * @param x 
- */
-function log(x: any) {
-    console.log(x);
+    private onClick(event: React.MouseEvent<Button, MouseEvent>){
+        
+    }
 }
